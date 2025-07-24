@@ -1,16 +1,96 @@
-# inShare file sharing app apis
 
-Rest api using Node, Express, Mongo.
-We will build rest api for a simple file sharing app. 
+# 🔐 VaultDrop – Secure File Sharing Platform
 
-![demo gif](https://github.com/ShivamJoker/GIF-Demos/raw/master/inshare%20demo.gif)
+**VaultDrop** is a backend-focused file-sharing platform that allows users to securely upload, share, and download files via unique expirable links. It supports SMTP-based email notifications and automated cleanup for enhanced performance and security.
 
-### Frontend source code can be found on @ShivamJoker Github
-https://github.com/ShivamJoker/InShare
+---
 
+## 🚀 Tech Stack
 
-## Installation 
-After download or clone run `npm install` OR `yarn install` to install all the dependancies.
-also do not forget to rename `.env.example` into `.env` an put all creadentials.
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB  
+- **File Uploads**: Multer  
+- **Email Service**: Nodemailer (SMTP)  
 
-🙏 If you find this repo helpful then don't forget to give a start ❇️ to this repository. :)
+---
+
+## ✨ Features
+
+- 📤 Upload and share files with unique download links  
+- 📧 Email-based file sharing with customizable SMTP templates  
+- ⏲️ Auto-delete files after 24 hours using scheduled jobs  
+- 🔐 Download tracking and secured file access routes  
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/vaultdrop-.git
+cd vaultdrop
+````
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file and add:
+
+```env
+PORT=
+MONGODB_URI=
+BASE_URL=
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+```
+
+### 4. Run the App Locally
+
+```bash
+npm start
+```
+
+### 5. Schedule File Cleanup (Production)
+
+Configure a daily job on **Heroku Scheduler** to delete expired files:
+
+```bash
+node services/deleteOldFiles.js
+```
+
+---
+
+## 📦 Key Functionalities
+
+### 📤 File Upload & Storage
+
+* Uses Multer to handle file uploads
+* Stores file metadata and expiration in MongoDB
+* Generates unique IDs for secure file access
+
+### 📧 Email Sharing
+
+* Sends email with download link using Nodemailer + SMTP
+* Supports HTML templates for professional emails
+
+### 🗑️ Auto-Cleanup (Cron Jobs)
+
+* Scheduled script deletes files older than 24 hours
+* Keeps the server clean and efficient
+
+---
+
+## 👤 Author
+
+**Gollapalli Abhiram**
+🔗 [LinkedIn](https://www.linkedin.com/in/abhiramgollapalli/)
+🔗 [GitHub](https://github.com/gollapalliabhiram)
+
